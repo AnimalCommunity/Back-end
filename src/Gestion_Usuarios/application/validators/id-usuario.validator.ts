@@ -1,5 +1,5 @@
 import { Injectable } from '@nestjs/common';
-import { UsuarioTypeORM } from  "../../infraestructure/usuario.typeorm";
+import { UsuarioTypeORM } from  "../../infrastructure/persistence/typeorm/entities/usuario.typeorm";
 import { Repository } from 'typeorm';
 import { InjectRepository } from '@nestjs/typeorm';
 import { AppNotification } from '../../../common/application/app.notification';

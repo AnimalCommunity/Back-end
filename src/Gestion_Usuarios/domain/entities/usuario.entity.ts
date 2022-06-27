@@ -1,6 +1,6 @@
 import { AggregateRoot } from '@nestjs/cqrs';
 import { UsuarioId } from '../value-objects/usuario-id.value';
-import { Email } from '../value-objects/email.value';
+import { Email } from '../value-objects/email-value';
 //import { Age } from '../value-objects/age.value';
 import { UsuarioRegistrado } from '../events/usuario-registrado.event';
 import { Password } from '../../../common/domain/value-objects/password.value';

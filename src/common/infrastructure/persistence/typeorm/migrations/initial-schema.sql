@@ -31,7 +31,7 @@ CREATE TABLE IF NOT EXISTS adopcion (
   usuario_adoptante VARCHAR(45) NOT NULL, 
   PRIMARY KEY(id),
   UNIQUE KEY UQ_mascotas_name_mascota_id(mascota_name, usuario_adoptante),
-  CONSTRAINT FK_mascotas_name_id FOREIGN KEY(mascota_id) REFERENCES mascota(id),
+  CONSTRAINT FK_mascotas_name_id FOREIGN KEY(mascota_id) REFERENCES mascotas(id),
   CONSTRAINT FK_usuarios_name_id FOREIGN KEY(usuario_adoptante) REFERENCES usuarios(first_name)
 ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
