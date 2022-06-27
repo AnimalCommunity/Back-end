@@ -14,7 +14,7 @@ export class GetUsuarioHandler implements IQueryHandler<GetUsuarioQuery> {
     SELECT 
         id,
         name as name,
-        last_name as lastName,
+        lastName as lastName,
         email,
         password
     FROM

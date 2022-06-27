@@ -63,13 +63,13 @@ export class RegisterUsuarioHandler
       return 0;
     }
 
-    const motherId: number = Number(usuarioTypeORM.id.value);
-    usuario.changeId(UsuarioId.create(motherId));
+    const usuarioId: number = Number(usuarioTypeORM.id.value);
+    usuario.changeId(UsuarioId.create(usuarioId));
 
     usuario = this.publisher.mergeObjectContext(usuario);
     usuario.register();
     usuario.commit();
 
-    return motherId;
+    return usuarioId;
   }
 }

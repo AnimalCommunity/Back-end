@@ -12,7 +12,7 @@ export class UsuarioTypeORM {
   @Column('varchar', { name: 'name', length: 75, nullable: false })
   public name: string;
 
-  @Column('varchar', { name: 'last_name', length: 75, nullable: false })
+  @Column('varchar', { name: 'lastName', length: 75, nullable: false })
   public lastName: string;
 
   @Column((type) => EmailTypeORM, { prefix: false })

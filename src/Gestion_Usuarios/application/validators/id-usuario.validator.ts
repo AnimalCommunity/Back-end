@@ -22,9 +22,9 @@ export class IdUsuarioValidator {
       return notification;
     }
 
-    const mother: UsuarioTypeORM = await this.usuarioRepository.findOne(id);
+    const usuario: UsuarioTypeORM = await this.usuarioRepository.findOne(id);
 
-    if (mother == null) {
+    if (usuario == null) {
       notification.addError(`There is no usuario with id: ${id}`, null);
     }
 

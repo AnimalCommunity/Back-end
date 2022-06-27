@@ -72,11 +72,11 @@ export class UsuarioApplicationService {
         registerUsuarioRequestDto.password,
         //registerUsuarioRequestDto.age,
     );
-    const motherId = await this.commandBus.execute(registerUsuarioCommand);
+    const usuarioId = await this.commandBus.execute(registerUsuarioCommand);
 
     const registerUsuarioResponseDto: RegisterUsuarioResponseDto =
       new RegisterUsuarioResponseDto(
-      motherId,
+      usuarioId,
       registerUsuarioRequestDto.name,
       registerUsuarioRequestDto.lastName,
       registerUsuarioRequestDto.email,
