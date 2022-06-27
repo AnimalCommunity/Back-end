@@ -2,7 +2,7 @@ import { IQueryHandler, QueryHandler } from '@nestjs/cqrs';
 import { Repository } from 'typeorm';
 import { InjectRepository } from '@nestjs/typeorm';
 import { GetUsuarioByIdQuery } from '../../queries/get-usuario-by-id.query';
-import { UsuarioTypeORM } from '../../../infraestructure/usuario.typeorm';
+import { UsuarioTypeORM } from '../../../infrastructure/persistence/typeorm/entities/usuario.typeorm';
 
 @QueryHandler(GetUsuarioByIdQuery)
 export class GetUsuarioByIdHandler

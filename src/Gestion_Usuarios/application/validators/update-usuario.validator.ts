@@ -1,8 +1,8 @@
 import { Injectable } from '@nestjs/common';
 import { Repository } from 'typeorm';
 import { InjectRepository } from '@nestjs/typeorm';
-import { UsuarioTypeORM } from "../../infraestructure/usuario.typeorm";
-import { Email } from '../../domain/value-objects/email.value';
+import { UsuarioTypeORM } from "../../infrastructure/persistence/typeorm/entities/usuario.typeorm";
+import { Email } from '../../domain/value-objects/email-value';
 import { AppNotification } from '../../../common/application/app.notification';
 import { Password } from '../../../common/domain/value-objects/password.value';
 import { Result } from 'typescript-result';

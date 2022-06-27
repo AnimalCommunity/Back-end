@@ -1,11 +1,11 @@
 import { Injectable } from "@nestjs/common";
 import { InjectRepository } from "@nestjs/typeorm";
-import { UsuarioTypeORM } from "../../infraestructure/usuario.typeorm";
+import { UsuarioTypeORM } from "../../infrastructure/persistence/typeorm/entities/usuario.typeorm";
 import { Repository } from "typeorm";
 import { RegisterUsuarioRequestDto } from "../dtos/request/register-usuario-request.dto";
 import { AppNotification } from "../../../common/application/app.notification";
 import { Result } from 'typescript-result';
-import { Email } from '../../domain/value-objects/email.value';
+import { Email } from '../../domain/value-objects/email-value';
 
 @Injectable()
 export class RegisterUsuarioValidator {

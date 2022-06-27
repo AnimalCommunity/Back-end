@@ -1,6 +1,6 @@
-import { UsuarioTypeORM } from "../../infraestructure/usuario.typeorm";
+import { UsuarioTypeORM } from "../../infrastructure/persistence/typeorm/entities/usuario.typeorm";
 import { Usuario } from '../../domain/entities/usuario.entity';
-import { UsuarioIdTypeORM } from '../../infraestructure/usuario.id.typeorm';
+import { UsuarioIdTypeORM } from '../../infrastructure/persistence/typeorm/value-objects/usuario-id.typeorm';
 import { EmailTypeORM } from '../../../common/infrastructure/persistence/typeorm/entities/email.typeorm';
 import { AgeTypeORM } from '../../../common/infrastructure/persistence/typeorm/entities/age.typeorm';
 import { PasswordTypeORM } from '../../../common/infrastructure/persistence/typeorm/entities/password.typeorm';

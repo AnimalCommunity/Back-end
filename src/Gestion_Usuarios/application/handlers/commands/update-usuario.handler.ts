@@ -1,10 +1,10 @@
-import { Email } from '../../../domain/value-objects/email.value';
+import { Email } from '../../../domain/value-objects/email-value';
 import { InjectRepository } from '@nestjs/typeorm';
 import { CommandHandler, ICommandHandler } from '@nestjs/cqrs';
 import { Repository } from 'typeorm';
 import { AppNotification } from '../../../../common/application/app.notification';
 import { Password } from '../../../../common/domain/value-objects/password.value';
-import { UsuarioTypeORM } from '../../../infraestructure/usuario.typeorm';
+import { UsuarioTypeORM } from '../../../infrastructure/persistence/typeorm/entities/usuario.typeorm';
 import { UsuarioId } from '../../../domain/value-objects/Usuario-id.value';
 import { Result } from 'typescript-result';
 //import { Age } from '../../../domain/value-objects/age.value';

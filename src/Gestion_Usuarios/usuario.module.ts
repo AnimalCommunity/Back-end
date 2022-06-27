@@ -3,7 +3,7 @@ import { CqrsModule } from '@nestjs/cqrs';
 import { UsuarioController } from './api/usuario.controller';
 import { UsuarioApplicationService } from './application/services/usuario-application.service';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { UsuarioTypeORM } from "./infraestructure/usuario.typeorm";
+import { UsuarioTypeORM } from "./infrastructure/persistence/typeorm/entities/usuario.typeorm";
 import { RegisterUsuarioValidator } from './application/validators/register-usuario.validator';
 import { RegisterUsuarioHandler } from './application/handlers/commands/register-usuario.handler';
 import { UsuarioRegisteredHandler } from './application/handlers/events/usuario-registered.handler';

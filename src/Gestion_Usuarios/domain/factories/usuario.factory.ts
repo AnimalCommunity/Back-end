@@ -1,4 +1,4 @@
-import { Email } from '../value-objects/email.value';
+import { Email } from '../value-objects/email-value';
 //import { Age } from '../value-objects/age.value';
 import { Usuario } from '../entities/usuario.entity';
 import { UsuarioId } from '../value-objects/usuario-id.value';

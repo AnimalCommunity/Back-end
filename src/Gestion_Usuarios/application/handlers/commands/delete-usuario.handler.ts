@@ -1,7 +1,7 @@
 import { Repository } from 'typeorm';
 import { InjectRepository } from '@nestjs/typeorm';
 import { CommandHandler, ICommandHandler } from '@nestjs/cqrs';
-import { UsuarioTypeORM } from '../../../infraestructure/usuario.typeorm';
+import { UsuarioTypeORM } from '../../../infrastructure/persistence/typeorm/entities/usuario.typeorm';
 import { DeleteUsuarioCommand } from '../../commands/delete-usuario.command';
 
 @CommandHandler(DeleteUsuarioCommand)

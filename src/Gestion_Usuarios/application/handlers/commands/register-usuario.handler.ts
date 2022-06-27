@@ -1,10 +1,10 @@
 import { RegisterUsuarioCommand } from '../../commands/register-usuario.command';
 import { CommandHandler, EventPublisher, ICommandHandler } from '@nestjs/cqrs';
 import { InjectRepository } from '@nestjs/typeorm';
-import { UsuarioTypeORM } from '../../../infraestructure/usuario.typeorm';
+import { UsuarioTypeORM } from '../../../infrastructure/persistence/typeorm/entities/usuario.typeorm';
 import { Repository } from 'typeorm';
 import { AppNotification } from '../../../../common/application/app.notification';
-import { Email } from '../../../domain/value-objects/email.value';
+import { Email } from '../../../domain/value-objects/email-value';
 import { Result } from 'typescript-result';
 //import { Age } from '../../../domain/value-objects/age.value';
 import { UsuarioFactory } from '../../../domain/factories/usuario.factory';
