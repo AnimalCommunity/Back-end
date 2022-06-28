@@ -41,10 +41,10 @@ export class UsuarioController {
   }
 
   @Get(':id')
-  @ApiOperation({ summary: 'Get Mother by Id' })
+  @ApiOperation({ summary: 'Get Usuario by Id' })
   @ApiResponse({
     status: 200,
-    description: 'Mother returned',
+    description: 'Usuario returned',
     type: GetUsuarioDto,
   })
   async getMotherById(

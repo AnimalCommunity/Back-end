@@ -41,10 +41,10 @@ export class AdopcionController {
   }
 
   @Get(':id')
-  @ApiOperation({ summary: 'Get Mother by Id' })
+  @ApiOperation({ summary: 'Get Adopcion by Id' })
   @ApiResponse({
     status: 200,
-    description: 'Mother returned',
+    description: 'Adopcion returned',
     type: GetAdopcionDto,
   })
   async getMotherById(
