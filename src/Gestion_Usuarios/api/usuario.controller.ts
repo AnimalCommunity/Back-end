@@ -19,7 +19,7 @@ import { DeleteUsuarioResponseDto } from '../application/dtos/response/delete-us
 @Controller ('usuario')
 export class UsuarioController {
   constructor (
-    private readonly mothersApplicationService: UsuarioApplicationService,
+    private readonly usuariosApplicationService: UsuarioApplicationService,
     private readonly queryBus: QueryBus,
   ) {}
 
@@ -31,7 +31,7 @@ export class UsuarioController {
     type: GetUsuarioDto,
     isArray: true,
   })
-  async getMothers(@Res({ passthrough: true }) response): Promise<object> {
+  async getUsuarios(@Res({ passthrough: true }) response): Promise<object> {
     try {
       const usuario = await this.queryBus.execute(new GetUsuarioQuery());
       return ApiController.ok(response, usuario);
@@ -41,19 +41,19 @@ export class UsuarioController {
   }
 
   @Get(':id')
-  @ApiOperation({ summary: 'Get Mother by Id' })
+  @ApiOperation({ summary: 'Get Usuario by Id' })
   @ApiResponse({
     status: 200,
-    description: 'Mother returned',
+    description: 'Usuario returned',
     type: GetUsuarioDto,
   })
-  async getMotherById(
+  async getUsuarioById(
     @Param('id') id: number,
     @Res({ passthrough: true }) response,
   ): Promise<object> {
     try {
       const result: Result<AppNotification, GetUsuarioByIdDto> =
-        await this.mothersApplicationService.getById(id);
+        await this.usuariosApplicationService.getById(id);
 
       if (result.isSuccess()) {
         return ApiController.created(response, result.value);
@@ -73,13 +73,13 @@ export class UsuarioController {
     type: GetUsuarioDto,
   })
   async register(
-    @Body() registerMotherRequestDto: RegisterUsuarioRequestDto,
+    @Body() registerUsuarioRequestDto: RegisterUsuarioRequestDto,
     @Res({ passthrough: true }) response,
   ):Promise<object> {
     try {
       const result: Result<AppNotification, RegisterUsuarioResponseDto> =
-        await this.mothersApplicationService.register(
-          registerMotherRequestDto
+        await this.usuariosApplicationService.register(
+          registerUsuarioRequestDto
         );
 
       if (result.isSuccess()) {
@@ -101,14 +101,14 @@ export class UsuarioController {
   })
   async update(
     @Param('id') id: number,
-    @Body() updateMotherRequestDto: UpdateUsuarioRequestDto,
+    @Body() updateUsuarioRequestDto: UpdateUsuarioRequestDto,
     @Res({ passthrough: true }) response,
   ): Promise<object> {
     try {
       const result: Result<AppNotification, UpdateUsuarioResponseDto> =
-        await this.mothersApplicationService.update(
+        await this.usuariosApplicationService.update(
           id,
-          updateMotherRequestDto,
+          updateUsuarioRequestDto,
         );
 
       if (result.isSuccess()) {
@@ -134,7 +134,7 @@ export class UsuarioController {
   ): Promise<object> {
     try {
       const result: Result<AppNotification, DeleteUsuarioResponseDto> =
-        await this.mothersApplicationService.delete(id);
+        await this.usuariosApplicationService.delete(id);
 
       if (result.isSuccess()) {
         return ApiController.created(response, result.value);

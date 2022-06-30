@@ -46,7 +46,7 @@ export class UpdateUsuarioHandler
       return null;
     }*/
 
-    const mother: Usuario = UsuarioFactory.withId(
+    const usuario: Usuario = UsuarioFactory.withId(
       idResult,
       command.name,
       command.lastName,
@@ -55,9 +55,9 @@ export class UpdateUsuarioHandler
       //ageResult.value,
     );
 
-    const motherTypeORM = UsuarioMapper.toTypeORM(mother);
-    await this.usuarioRepository.update(command.targetId, motherTypeORM);
+    const usuarioTypeORM = UsuarioMapper.toTypeORM(usuario);
+    await this.usuarioRepository.update(command.targetId, usuarioTypeORM);
 
-    return motherTypeORM;
+    return usuarioTypeORM;
   }
 }

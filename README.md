@@ -39,7 +39,7 @@ $ nest g resource customers
 
 ```
 BANKING_DDD_NEST_MYSQL=mysql://{user}:{password}@{host}:{port}/{database}
-BANKING_DDD_NEST_MYSQL=mysql://root:root@localhost:3306/banking-ddd-nest
+BANKING_DDD_NEST_MYSQL=mysql://root:root@localhost:3306/animalcommunity-ddd-nest
 Note: Password must be URL encoded, %25 is the url encoding of %.
 ```
 
