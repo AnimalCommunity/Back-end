@@ -13,12 +13,12 @@ export class GetUsuarioHandler implements IQueryHandler<GetUsuarioQuery> {
     const sql = `
     SELECT 
         id,
-        name as name,
+        first_name as name,
         last_name as lastName,
         email,
-        password
+        passwordd
     FROM
-        usuario
+        usuarios
     ORDER BY
         id;  
     `;

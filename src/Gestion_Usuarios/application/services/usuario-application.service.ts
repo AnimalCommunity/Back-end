@@ -58,11 +58,9 @@ export class UsuarioApplicationService {
     registerUsuarioRequestDto: RegisterUsuarioRequestDto,
   ): Promise<Result<AppNotification, RegisterUsuarioResponseDto>> {
     const notification: AppNotification = await this.registerUsuarioValidator.validate(registerUsuarioRequestDto);
-
     if (notification.hasErrors()) {
       return Result.error(notification);
     }
-
     //Registro 
     const registerUsuarioCommand: RegisterUsuarioCommand =
       new RegisterUsuarioCommand(
@@ -72,11 +70,10 @@ export class UsuarioApplicationService {
         registerUsuarioRequestDto.password,
         //registerUsuarioRequestDto.age,
     );
-    const motherId = await this.commandBus.execute(registerUsuarioCommand);
-
+    const usuarioId = await this.commandBus.execute(registerUsuarioCommand);
     const registerUsuarioResponseDto: RegisterUsuarioResponseDto =
       new RegisterUsuarioResponseDto(
-      motherId,
+      usuarioId,
       registerUsuarioRequestDto.name,
       registerUsuarioRequestDto.lastName,
       registerUsuarioRequestDto.email,

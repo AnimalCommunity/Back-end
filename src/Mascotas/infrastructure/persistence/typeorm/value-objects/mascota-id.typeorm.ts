@@ -1,4 +1,4 @@
-/*import { PrimaryGeneratedColumn } from 'typeorm';
+import { PrimaryGeneratedColumn } from 'typeorm';
 
 export class MascotaIdTypeORM {
   @PrimaryGeneratedColumn('increment', {
@@ -16,4 +16,3 @@ export class MascotaIdTypeORM {
     return new MascotaIdTypeORM(value);
   }
 }
-*/

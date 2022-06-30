@@ -24,8 +24,9 @@ export class RegisterUsuarioHandler
   ) {}
 
   async execute(command: RegisterUsuarioCommand) {
+    
     const emailResult: Result<AppNotification, Email> = Email.create(command.email);
-
+    
     if (emailResult.isFailure()) {
       return 0;
     }
@@ -33,7 +34,7 @@ export class RegisterUsuarioHandler
     const passwordResult: Result<AppNotification, Password> = Password.create(
       command.password,
     );
-
+    console.log(JSON.stringify(passwordResult));
     if (passwordResult.isFailure()) {
       return 0;
     }
@@ -63,13 +64,13 @@ export class RegisterUsuarioHandler
       return 0;
     }
 
-    const motherId: number = Number(usuarioTypeORM.id.value);
-    usuario.changeId(UsuarioId.create(motherId));
+    const usuarioId: number = Number(usuarioTypeORM.id.value);
+    usuario.changeId(UsuarioId.create(usuarioId));
 
     usuario = this.publisher.mergeObjectContext(usuario);
     usuario.register();
     usuario.commit();
 
-    return motherId;
+    return usuarioId;
   }
 }

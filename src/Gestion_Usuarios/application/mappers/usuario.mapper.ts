@@ -6,17 +6,17 @@ import { AgeTypeORM } from '../../../common/infrastructure/persistence/typeorm/e
 import { PasswordTypeORM } from '../../../common/infrastructure/persistence/typeorm/entities/password.typeorm';
 
 export class UsuarioMapper {
-  public static toTypeORM(mother: Usuario): UsuarioTypeORM {
+  public static toTypeORM(usuario: Usuario): UsuarioTypeORM {
     const usuarioTypeORM: UsuarioTypeORM = new UsuarioTypeORM();
 
-    usuarioTypeORM.id = UsuarioIdTypeORM.from(mother.getId().getValue());
-    usuarioTypeORM.name = mother.getName();
-    usuarioTypeORM.lastName = mother.getLastName();
-    usuarioTypeORM.email = EmailTypeORM.from(mother.getEmail().getValue());
+    usuarioTypeORM.id = UsuarioIdTypeORM.from(usuario.getId().getValue());
+    usuarioTypeORM.name = usuario.getName();
+    usuarioTypeORM.lastName = usuario.getLastName();
+    usuarioTypeORM.email = EmailTypeORM.from(usuario.getEmail().getValue());
     (usuarioTypeORM.password = PasswordTypeORM.from(
-      mother.getPassword().getValue(),
+      usuario.getPassword().getValue(),
     ));
-      /*(usuarioTypeORM.age = AgeTypeORM.from(mother.getAge().getAge()))*/;
+      /*(usuarioTypeORM.age = AgeTypeORM.from(usuario.getAge().getAge()))*/;
     return usuarioTypeORM;
   }
 }

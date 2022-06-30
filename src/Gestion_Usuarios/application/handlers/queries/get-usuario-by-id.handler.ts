@@ -16,10 +16,10 @@ export class GetUsuarioByIdHandler
   async execute(query: GetUsuarioByIdQuery) {
     const id = query.id;
 
-    const mother: UsuarioTypeORM = await this.usuarioRepository.findOne(
+    const usuario: UsuarioTypeORM = await this.usuarioRepository.findOne(
       id,
     );
 
-    return mother;
+    return usuario;
   }
 }
